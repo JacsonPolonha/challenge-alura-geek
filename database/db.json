@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "name": "Dart Vader",
+      "price": "50",
+      "image": "http://",
+      "id": "1"
+    },
+    {
+      "name": "Batman",
+      "price": "35",
+      "image": "http://",
+      "id": "2"
+    },
+    {
+      "name": "Flash",
+      "price": "25",
+      "image": "http://",
+      "id": "3"
+    },
+    {
+      "id": "95af",
+      "name": "Jacson",
+      "price": "10",
+      "image": "http"
+    },
+    {
+      "id": "20dc",
+      "name": "admin",
+      "price": "150",
+      "image": "www"
+    }
+  ]
+}
