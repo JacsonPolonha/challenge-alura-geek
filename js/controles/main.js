@@ -14,13 +14,24 @@ function createElement(name, price, image, id) {
                 <p>${name}</p>
                 <div class="card__valor">
                     <p>${price}</p>
-                    <img src="" alt="lixeira icon">
+                    <img src="../assets/lixeira.png" alt="lixeira icon" data-excluir data-id="${id}">
                 </div>
             </div>
         </div>
     `
 
     productContainer.appendChild(card);
+
+    const deleteIcon = card.querySelector("[data-excluir]");
+    deleteIcon.addEventListener("click", async () => {
+        try {
+            await servicesProducts.deleteProduct(id);
+            card.remove();
+        } catch (error) {
+            console.log(error);
+        }
+    });
+
     return card;
 }
 
@@ -50,48 +61,3 @@ form.addEventListener("submit", (event) => {
 });
 
 render();
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/*
-<div class="card__produto">
-    <img src="" alt="imagem do produto">
-    <div class="card__info">
-        <p>nome do produto</p>
-        <div class="card__valor">
-            <p>$00,00</p>
-            <img src="" alt="lixeira icon">
-        </div>
-    </div>
-</div>
-<div class="card__produto">
-    <img src="" alt="imagem do produto">
-    <div class="card__info">
-        <p>nome do produto</p>
-        <div class="card__valor">
-            <p>$00,00</p>
-            <img src="" alt="lixeira icon">
-        </div>
-    </div>
-</div>
-<div class="card__produto">
-    <img src="" alt="imagem do produto">
-    <div class="card__info">
-        <p>nome do produto</p>
-        <div class="card__valor">
-            <p>$00,00</p>
-            <img src="" alt="lixeira icon">
-        </div>
-    </div>
-</div> 
-*/}

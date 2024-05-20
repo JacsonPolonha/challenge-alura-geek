@@ -20,7 +20,20 @@ const creatProduct = (name, price, image) => {
     .catch((err) => console.log(err))
 }
 
+const deleteProduct = (id) => {
+    return fetch(`http://localhost:3000/products/${id}`, {
+        method: "DELETE",
+    })
+    .then((res) => {
+        if (!res.ok) {
+            throw new Error("Failed to delete product");
+        }
+    })
+    .catch((err) => console.log(err));
+};
+
 export const servicesProducts = {
     productList,
     creatProduct,
+    deleteProduct,
 }

@@ -17,18 +17,6 @@
       "price": "25",
       "image": "http://",
       "id": "3"
-    },
-    {
-      "id": "95af",
-      "name": "Jacson",
-      "price": "10",
-      "image": "http"
-    },
-    {
-      "id": "20dc",
-      "name": "admin",
-      "price": "150",
-      "image": "www"
     }
   ]
 }
