@@ -13,7 +13,7 @@ function createElement(name, price, image, id) {
             <div class="card__info">
                 <p>${name}</p>
                 <div class="card__valor">
-                    <p>${price}</p>
+                    <p>$${price}</p>
                     <img src="../assets/lixeira.png" alt="lixeira icon" data-excluir data-id="${id}">
                 </div>
             </div>
@@ -55,9 +55,16 @@ form.addEventListener("submit", (event) => {
     const price = document.querySelector("[data-price]").value;
     const image = document.querySelector("[data-image]").value;
 
-    servicesProducts.creatProduct(name, price, image)
+     
+     if (name != "" && price != "" && image != "") {
+        servicesProducts.creatProduct(name, price, image)
         .then((res) => console.log(res))
         .catch((error) => console.log(error));
+     } else {
+        alert("Preencha todos os campos");
+     }
+
+    
 });
 
 render();
